@@ -1,0 +1,8 @@
+test_plans:
+  - Smoke Test
+  - Regression Test
+  - Function Test
+  - Stress Test
+  - Daily Test
+  - Full Test
+  - Customize Test Plan

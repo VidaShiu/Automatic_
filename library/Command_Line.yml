@@ -1,0 +1,89 @@
+Command_Line:
+  1:
+    ID: Get_Rendon_Code
+    Title: Check the device's current Rendon code
+    Command_Sends: rcode_dump
+    Response_Expectation: "[rcode_dump+ok]"
+    Condition: 
+         type: valid format_rcode
+  2:
+    ID: Get_RTC_Time
+    Title: Check the device's current RTC Time(Timestamp)
+    Command_Sends: time_tick
+    Response_Expectation: "[time_tick+ok]"
+    Condition:
+         type: valid timestamp
+  3:
+    ID: Get_SN_Number
+    Title: Check the device's serial number
+    Command_Sends: sn_get
+    Response_Expectation: "[sn_get+ok]"
+    Condition:
+         type: equal
+  4:
+    ID: Get_FW_Version
+    Title: Check the device's current Firmware version
+    Command_Sends: version_vent
+    Response_Expectation: "[version_vent+ok]"
+    Condition:
+         type: equal
+  5:
+    ID: Get_LCM_Version
+    Title: Check the device's current LCM version (alias named software version)
+    Command_Sends: lcm_version
+    Response_Expectation: "[lcm_version+ok]"
+    Condition:
+         type: equal
+  6:
+    ID: Get_WiFi_Version
+    Title: Check the device's current Wi-Fi version
+    Command_Sends: wifi_ver_read_chk
+    Response_Expectation: "[wifi_ver_read_chk+ok]"
+    Condition:
+         type: equal
+  7:
+    ID: Get_WiFi_MAC_Address
+    Title: Check the device's Wi-Fi MAC Address
+    Command_Sends: wifi_mac_get
+    Response_Expectation: "[wifi_mac_get+ok]"
+    Condition:
+         type: valid format_mac
+  8:
+    ID: Get_Device_Database
+    Title: Get and check the device's current information
+    Command_Sends: db_dump
+    Response_Expectation: "[db_dump+ok]"
+    Condition:
+         type: asynchrony
+  9:
+    ID: Reboot
+    Title: Check if the device can perform a reboot and return to idle state
+    Command_Sends: sys_rst
+    Response_Expectation: "[sys_rst+ok]"
+    Condition:
+         type: restore
+         status: "Reboot has been complete."
+  10:
+    ID: Reset_To_Factory_Default
+    Title: Check if the device can perform a reset to factory task and return to idle state
+    Command_Sends: db_rst
+    Response_Expectation: "[db_rst+ok]"
+    Condition:
+         type: restore
+         status: "Reboot has been complete."
+  11:
+    ID: Start_To_Therapy
+    Title: Check whether the device can perform the task of initiating therapy
+    Command_Sends: therapy on
+    Response_Expectation: "[therapy on+ok]"
+    Condition:
+         type: therapy start
+         duration: 300
+  12:
+    ID: Stop_To_Therapy
+    Title: Check whether the device can perform the task of stopping therapy
+    Command_Sends: therapy off
+    Response_Expectation: "[therapy off+ok]"
+    Condition:
+         type: therapy stop
+         status: "File is Uploading."

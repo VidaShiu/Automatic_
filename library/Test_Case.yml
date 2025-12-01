@@ -1,0 +1,21 @@
+test_cases:
+  Smoke Test:
+      - Step_1: 2
+      - Step_2: 3
+      - Step_3: 4
+      - Step_4: 5   
+      - Step_5: 6
+      - Step_6: 7
+  Regression Test:
+      - Step_1: 2
+  Function Test:
+      - Step_1: 2
+  Stress Test:
+      - Step_1: 9
+  Daily Test:
+      - Step_1: 11
+      - Step_2: 12
+  Full Test:
+      - Step_8: 8
+  Customize Test Plan:
+      - Step_1: null
