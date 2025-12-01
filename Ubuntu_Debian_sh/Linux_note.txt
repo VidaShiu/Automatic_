@@ -1,0 +1,50 @@
+I. Functions
+- script folder
+1.Saperate to init/env_check/unit_tests/cleanup
+
+- ScriptLoader
+
+1. 掃描 /scripts 目錄, 自動找到所有 .sh: Use Recursion, struct
+2. Distributs that the shell script to different module
+3. Execution order
+
+- ScriptExecutor
+
+1. 捕捉 stdout/stderr, pipeline callback
+2. 回傳 exit code
+
+- PipelineManager
+
+1. Support the multi-module dataflow(and management): Use const
+
+- Logger / Report
+
+1. 收集每一個script的log and 統整結果
+2. 輸出成txt/HTML/JSON, think about can it import to database?
+
+- Main(runner)
+1. 按模組順序執行
+
+II. Architecture
+
+/automation-runner
+    /scripts
+        /init                ← 系統初始化腳本
+            00_init.sh
+        /env_check           ← 環境檢查腳本
+            10_check_env.sh
+        /unit_tests          ← 多人單元測試腳本
+            modA_test.sh
+            modB_test.sh
+            modC_test.sh
+        /cleanup             ← 結束清理腳本
+            99_cleanup.sh
+    /core
+        script_loader.h/.cpp
+        script_executor.h/.cpp
+        pipeline_manager.h/.cpp
+        logger.h/.cpp
+        report_generator.h/.cpp
+
+    config.json          ← 定義流程順序（可選）
+    main.cpp

@@ -1,0 +1,33 @@
+=== Loop Times: 1 === 
+?? 2025/10/23 16:01:51.89 
+Disconnecting... 
+Disconnection request was completed successfully for interface "Wi-Fi".
+Connecting to profile Advantecher... 
+Connection request was completed successfully.
+    Description            : Intel(R) Wi-Fi 6 AX201 160MHz
+    SSID                   : Advantecher
+    AP BSSID               : b0:1f:8c:05:b4:13
+    State                  : connected
+    Rssi                   : -47
+
+Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=13ms TTL=111
+Reply from 8.8.8.8: bytes=32 time=11ms TTL=111
+Reply from 8.8.8.8: bytes=32 time=8ms TTL=111
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=111
+Reply from 8.8.8.8: bytes=32 time=9ms TTL=111
+Reply from 8.8.8.8: bytes=32 time=13ms TTL=111
+Reply from 8.8.8.8: bytes=32 time=11ms TTL=111
+Reply from 8.8.8.8: bytes=32 time=8ms TTL=111
+Reply from 8.8.8.8: bytes=32 time=15ms TTL=111
+Reply from 8.8.8.8: bytes=32 time=10ms TTL=111
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 10, Received = 10, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 8ms, Maximum = 15ms, Average = 10ms
+Waiting for 30 seconds (interval + buffer)... 
+=== Loop Times: 2 === 
+?? 2025/10/23 16:02:31.19 
+Disconnecting... 
+Disconnection request was completed successfully for interface "Wi-Fi".
